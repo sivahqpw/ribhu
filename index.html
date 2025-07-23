@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <title>SPM Studio | মাত্র ₹১৯৯-এ ইংরেজি দুর্বলতা দূর করার পার্সোনাল সেশন</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="spm.ico" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --brand-blue: #2a4f6e;
+      --brand-gold: #d9a441;
+      --brand-bg: #f4f9fb;
+      --brand-dark: #1b1b1b;
+      --text-color: #333;
+      --card-bg: #ffffff;
+      --border-color: #e0e0e0;
+      --success-color: #28a745;
+      --guarantee-bg: #e8f5e9; /* Light green for guarantee box */
+      
+      /* --- Dedicated color for the primary call-to-action --- */
+      --action-green: #00e676;
+
+      /* Variables for the sticky footer text */
+      --color-text-white: #ffffff;
+    }
+
+    body {
+      font-family: 'Noto Sans Bengali', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      background: var(--brand-bg);
+      color: var(--text-color);
+      line-height: 1.7;
+      padding-bottom: 120px; /* Space for sticky footer */
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: var(--card-bg);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo img {
+      height: 45px;
+      border-radius: 50%;
+    }
+    
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .site-name {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--brand-blue);
+    }
+    .tagline {
+      font-size: 13px;
+      font-weight: 500;
+      color: #5a748c;
+    }
+    
+    header nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: var(--brand-blue);
+        font-weight: 600;
+    }
+
+    .main-layout {
+        margin-top: 40px;
+    }
+    .content-column {
+        min-width: 0;
+    }
+    
+    .gig-title {
+      font-size: 38px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: var(--brand-blue);
+      line-height: 1.4;
+      text-align: center;
+    }
+    
+    .gig-subtitle {
+        font-size: 22px;
+        font-weight: 600;
+        text-align: center;
+        color: var(--brand-blue);
+        margin: -10px auto 40px;
+        max-width: 700px;
+    }
+
+    .gig-gallery {
+        margin-bottom: 40px;
+    }
+    .main-image img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .content-section {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    .content-section h2 {
+      margin-top: 0;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--brand-blue);
+      border-bottom: 3px solid var(--brand-gold);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    .feature-list ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .feature-list li {
+        padding-left: 35px; /* Increased padding for icon */
+        position: relative;
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+    .feature-list li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 4px; /* Adjusted vertical alignment */
+        width: 22px;
+        height: 22px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2328a745'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .booking-steps ol {
+        list-style: none;
+        counter-reset: step-counter;
+        padding-left: 0;
+    }
+    .booking-steps li {
+        counter-increment: step-counter;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+    }
+    .booking-steps li::before {
+        content: counter(step-counter);
+        margin-right: 15px;
+        background: var(--brand-gold);
+        color: var(--brand-dark);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        flex-shrink: 0;
+    }
+    
+    .instructor-bio {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    .instructor-bio img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 4px solid var(--card-bg);
+        flex-shrink: 0;
+    }
+    .instructor-bio-text p {
+        margin-bottom: 10px;
+    }
+
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    .testimonial-card {
+        background: var(--brand-bg);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 5px solid var(--brand-gold);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    .testimonial-card p {
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-style: italic;
+        color: var(--text-color);
+    }
+    .testimonial-card .author {
+        font-weight: 700;
+        color: var(--brand-blue);
+    }
+    
+    .guarantee-box {
+      background: var(--guarantee-bg);
+      border: 2px dashed var(--success-color);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    .guarantee-box h3 {
+      margin-top: 0;
+      margin-bottom: 0; /* Removed margin-bottom */
+      color: var(--brand-blue);
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 5px;
+    }
+    .faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      list-style: none;
+      position: relative;
+      padding-right: 25px;
+      font-size: 18px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: '+';
+      position: absolute;
+      right: 5px;
+      font-size: 20px;
+      color: var(--brand-gold);
+    }
+    .faq details[open] summary::after { content: '−'; }
+    .faq p { margin-top: 10px; padding-left: 5px; }
+
+    .sweet-ending {
+      background: linear-gradient(135deg, var(--brand-blue), #1e3a52);
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+      border-radius: 12px;
+      margin: 40px 0 0; /* Adjusted margin */
+    }
+    .sweet-ending h2 { margin-top: 0; font-size: 28px; }
+    .sweet-ending p { max-width: 600px; margin: 15px auto 0; opacity: 0.9; }
+
+    footer {
+      background: var(--brand-dark);
+      color: #ccc;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      margin-top: auto;
+    }
+    
+    .sticky-footer { 
+      position: fixed; bottom: 0; left: 0; width: 100%; z-index: 1000; padding: 10px 40px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: space-between; background-color: var(--brand-dark); box-sizing: border-box; 
+    }
+    .sticky-footer__left { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+    .sticky-footer__price { font-size: 24px; font-weight: 900; color: var(--action-green); font-family: 'Noto Sans Bengali', sans-serif; }
+    .sticky-footer__price .original-price { font-size: 18px; font-weight: 400; text-decoration: line-through; color: var(--color-text-white); opacity: 0.6; margin-left: 8px; }
+    .sticky-footer__deadline { font-weight: 600; font-family: 'Noto Sans Bengali', sans-serif; color: var(--color-text-white); opacity: 0.9; }
+    .sticky-footer__right { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .sticky-footer .btn-register { padding: 12px 25px; font-size: 16px; border-radius: 8px; font-family: 'Noto Sans Bengali', sans-serif; background-color: var(--action-green); color: var(--brand-dark); box-shadow: 0 3px 6px rgba(0,0,0,0.15); text-decoration: none; border: none; cursor: pointer; text-align: center; font-weight: 900; transition: background-color 0.3s ease; }
+    .sticky-footer .btn-register:hover { background-color: #00b860; }
+    .sticky-footer__bonus-text { font-size: 12px; font-weight: 600; color: var(--action-green); font-family: 'Noto Sans Bengali', sans-serif; }
+    
+    @media(max-width: 768px) {
+        header { flex-direction: column; gap: 15px; padding: 20px; }
+        .gig-title { font-size: 28px; }
+        .gig-subtitle { font-size: 18px; }
+        .content-section h2 { font-size: 24px; }
+        
+        .instructor-bio { flex-direction: column; text-align: center; } /* Responsive instructor bio */
+        .instructor-bio img { width: 120px; height: 120px; }
+
+        .sticky-footer { padding: 10px 20px; flex-direction: column; gap: 8px; text-align: center; }
+        .sticky-footer__left { align-items: center; gap: 2px; }
+        .sticky-footer__price { font-size: 20px; line-height: 1.1; }
+        .sticky-footer__price .original-price { font-size: 16px; }
+        .sticky-footer__deadline { font-size: 12px; }
+        .sticky-footer .btn-register { padding: 12px 20px; font-size: 15px; width: 100%; }
+        .sticky-footer__bonus-text { font-size: 11px; }
+        .sticky-footer__right { width: 100%; align-items: center; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="name.jpg" alt="শিব প্রসাদ মুখার্জি">
+    <div class="logo-text">
+      <span class="site-name">শিব প্রসাদ মুখার্জি</span>
+      <span class="tagline">কোর্স ইন্সট্রাকটার</span>
+    </div>
+  </div>
+  <nav>
+    <a href="#session-details">সেশন ডিটেলস</a>
+    <a href="#booking">বুকিং</a>
+    <a href="#faq">প্রশ্ন</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="main-layout">
+    
+    <div class="content-column">
+      <!-- UPDATED: Headline changed to formal tone -->
+      <h1 class="gig-title">আপনার সন্তানের স্কুলের দ্বিতীয় ভাষা ‘English Language' দুর্বলতা এবার খুঁজে বের করুন!</h1>
+      <p class="gig-subtitle">আর ওর জন্য একদম পার্সোনালাইজড স্টাডি প্ল্যান পেয়ে যান মাত্র ₹১৯৯-এ</p>
+      
+      <section class="gig-gallery" id="gallery">
+          <div class="main-image">
+              <img src="121.jpeg" alt="Personalized English Study Plan Session">
+          </div>
+      </section>
+
+      <section class="content-section" id="description">
+        <h2>প্রিয় অভিভাবক,</h2>
+        <p>আপনার ছেলে বা মেয়ে কি একাদশ বা দ্বাদশ শ্রেণিতে পড়ে? ওদের স্কুলে ‘English Language’ কি দ্বিতীয় ভাষা হিসেবে আছে? ওরা কি ঘণ্টার পর ঘণ্টা ইংরেজি পড়ছে – তাও রেজাল্টে ভরসা পাচ্ছে না?</p>
+        <p>বিশ্বাস করুন, এই সমস্যাটা শুধু আপনার সন্তানের নয় – প্রায় সব ছাত্রছাত্রীই এই ফাঁদে পড়ছে। আমাদের দেশে ইংরেজি দ্বিতীয় ভাষা – তাই স্কুলের সিলেবাসে পড়ানো হয় ঠিকই, কিন্তু বেশিরভাগ সময় সেটা এমনভাবে পড়ানো হয়, যাতে নম্বর তেমন বাড়ে না, আর কাজের ইংরেজি শেখাও হয় না।</p>
+        <p>Grammar, Composition, Letter Writing, Comprehension — সবকিছুই বইয়ে আছে। কিন্তু আসলে কোথায় ভুল করছে, কোথায় শব্দ আটকে যাচ্ছে, কোথায় বাক্য গড়ে তুলতে পারছে না – ওরা নিজেরাই বুঝতে পারে না। ফলে পরীক্ষায় নম্বর কমছে আর আত্মবিশ্বাস আরও কমে যাচ্ছে।</p>
+      </section>
+
+      <section class="content-section" id="about-instructor">
+        <h2>আপনার সন্তানের গাইড সম্পর্কে জানুন</h2>
+        <div class="instructor-bio">
+            <img src="name.jpg" alt="শিব প্রসাদ মুখার্জি">
+            <div class="instructor-bio-text">
+                <p>আমি শিব প্রসাদ মুখার্জি, বিগত ১২ বছরেরও বেশি সময় ধরে আমি ছাত্রছাত্রীদের ইংরেজি ভাষার ভয় দূর করতে সাহায্য করছি। আমার মূল লক্ষ্য শুধুমাত্র পরীক্ষায় নম্বর বাড়ানো নয়, বরং ভাষার প্রতি ভালোবাসা তৈরি করা, যাতে ছাত্রছাত্রীরা আত্মবিশ্বাসের সাথে ইংরেজি ব্যবহার করতে পারে।</p>
+                <p>আমার শিক্ষাগত যোগ্যতা এবং হাজারো ছাত্রছাত্রীকে পড়ানোর অভিজ্ঞতা থেকে আমি জানি, প্রতিটি ছাত্রছাত্রীর শেখার পদ্ধতি আলাদা। তাই আমি কোনো বাঁধাধরা নিয়মে বিশ্বাস করি না, বরং প্রত্যেকের ব্যক্তিগত সমস্যা বুঝে তাকে সঠিক পথ দেখানোর চেষ্টা করি।</p>
+            </div>
+        </div>
+      </section>
+      
+      <section class="content-section feature-list" id="session-details">
+        <h2>এই ৩০ মিনিটের এক-এক জন সেশনে ঠিক কী হবে?</h2>
+        <ul>
+          <li>প্রথমে ওর সঙ্গে বন্ধুর মতো কথা বলব – ওর স্কুলের সিলেবাস থেকে শুরু করে কোন চ্যাপ্টারটা ওর কাছে কঠিন, কোন ধরণের প্রশ্নে ও বারবার ভুল করছে – সব মন দিয়ে শুনব।</li>
+          <li>তারপর একদম পয়েন্ট ধরে বের করব – Grammar Section, Writing Section, বা Comprehension – ঠিক কোন জায়গায় ওর গ্যাপ আছে।</li>
+          <li>শুধু গ্যাপ দেখিয়ে ছাড়ব না – ওকে দেখিয়ে দেব, কীভাবে সেই গ্যাপগুলো Step-by-Step পূরণ করতে হবে। কোন বইটা আলাদা করে পড়বে, কোন টপিক আগে শেষ করবে, কীভাবে Writing Practice করবে – সব বাস্তব সমাধান।</li>
+          <li>তারপর ওর জন্য একদম পার্সোনালাইজড স্টাডি প্ল্যান – যাতে স্কুলের দ্বিতীয় ভাষা হিসেবে ইংরেজি সহজে রপ্ত করতে পারে, আর নাম্বারও বাড়াতে পারে।</li>
+          <li>আর হ্যাঁ – আপনাকেও বুঝিয়ে দেব, বাড়িতে আপনি কীভাবে সাহায্য করবেন, যাতে ও পড়াশোনায় মনোযোগ হারিয়ে না ফেলে।</li>
+        </ul>
+      </section>
+      
+      <section class="content-section feature-list" id="benefits">
+        <h2>এই সেশনের পর কী পাবে?</h2>
+        <ul>
+            <li>আর আন্দাজে পড়া নয় – এবার ও বুঝে যাবে, কোন অংশটায় ভুল হচ্ছে আর কীভাবে ঠিক করবে।</li>
+            <li>স্কুলের সিলেবাস বুঝে, ছোট ছোট পদ্ধতিতে কীভাবে পড়বে – সেই রোডম্যাপ হাতে থাকবে।</li>
+            <li>পরীক্ষায় মার্কস শুধু বাড়বে না – ইংরেজি নিয়ে আতঙ্কও উবে যাবে।</li>
+        </ul>
+      </section>
+
+      <section class="content-section" id="testimonials">
+        <h2>অভিভাবকরা কী বলছেন?</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"সেশনটা দারুণ ছিল। প্রথমবার কেউ আমার মেয়ের সমস্যাটা মন দিয়ে শুনল এবং ঠিক কোথায় ভুল হচ্ছে সেটা ধরিয়ে দিল। আমরা এখন অনেক পরিষ্কার যে কীভাবে এগোতে হবে।"</p>
+                <div class="author">- অনিতা রায়, অভিভাবক (ক্লাস ১২)</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"মাত্র ১৯৯ টাকায় এত ভালো গাইডেন্স পাবো ভাবিনি। আমার ছেলে এখন ইংরেজি নিয়ে অনেক বেশি আত্মবিশ্বাসী। শিব প্রসাদ স্যারকে অনেক ধন্যবাদ।"</p>
+                <div class="author">- সুমন দাস, অভিভাবক (ক্লাস ১১)</div>
+            </div>
+            <div class="testimonial-card">
+                <p>"পার্সোনালাইজড স্টাডি প্ল্যানটা অসাধারণ। স্কুলের বাইরেও যে এইভাবে ভাবা যায়, সেটা আমাদের জানা ছিল না।Highly recommended!"</p>
+                <div class="author">- প্রিয়াঙ্কা সেনগুপ্ত, অভিভাবক (ISC বোর্ড)</div>
+            </div>
+        </div>
+      </section>
+
+      <section class="content-section booking-steps" id="booking">
+        <h2>কীভাবে বুক করবেন? (সময়: ৩০ মিনিট)</h2>
+        <ol>
+            <li>নিচের 'এখনই বুক করুন' বোতামে ক্লিক করুন।</li>
+            <li>নিরাপদভাবে মাত্র ₹১৯৯ পেমেন্ট করুন।</li>
+            <li>আপনার সুবিধামতো টাইম স্লট বেছে নিন।</li>
+            <li>এরপর বাড়িতে বসেই আপনার ছেলে বা মেয়ে সেশনটি করে ফেলুক – আর স্কুলের দ্বিতীয় ভাষা ইংরেজিতে এবার Confident হোক!</li>
+        </ol>
+      </section>
+
+      <section class="content-section faq" id="faq">
+        <h2>সাধারণ প্রশ্ন ও উত্তর</h2>
+        <details>
+          <summary>এই সেশনটি কাদের জন্য?</summary>
+          <p>একাদশ বা দ্বাদশ শ্রেণির সেইসব ছাত্রছাত্রীদের জন্য, যারা CBSE, ISC, বা WBCHSE বোর্ডের অধীনে ইংরেজিকে দ্বিতীয় ভাষা হিসেবে পড়ছে এবং এই বিষয়ে দুর্বলতা অনুভব করছে। এছাড়াও, যে বাবা-মা চান সন্তানের জন্য একটি নির্দিষ্ট সমস্যা-ভিত্তিক সমাধান, তাদের জন্যও এই সেশনটি কার্যকর।</p>
+        </details>
+        <details>
+          <summary>সেশন ফি মাত্র ₹১৯৯ কেন?</summary>
+          <p>কারণ ইংরেজি শেখা বিলাসিতা নয় – আজকের সময়ে এটা বেসিক প্রয়োজন। স্কুলের দ্বিতীয় ভাষা হিসেবে ইংরেজি যদি এখনই ঠিকমতো না শেখে, তাহলে কলেজ, চাকরি বা হায়ার স্টাডিতে এই ছোট গ্যাপগুলোই বড় বাধা হয়ে দাঁড়াবে। আমাদের লক্ষ্য হলো <strong>কম</strong> খরচে সঠিক গাইডেন্স প্রদান করা।</p>
+        </details>
+        <details>
+            <summary>সেশনটি কীভাবে পরিচালিত হবে?</summary>
+            <p>সম্পূর্ণ সেশনটি অনলাইনে (Google Meet বা Zoom-এর মাধ্যমে) হবে। এটি একটি ওয়ান-টু-ওয়ান পার্সোনাল সেশন, তাই আপনার সন্তান সরাসরি আমার সাথে কথা বলে তার সমস্যা নিয়ে আলোচনা করার সুযোগ পাবে।</p>
+        </details>
+         <details>
+            <summary>পেমেন্ট করার পর কী করতে হবে?</summary>
+            <p>পেমেন্ট সফল হওয়ার পর আপনি ক্যালেন্ডার থেকে আপনার সুবিধামতো একটি সময় ও তারিখ বেছে নেওয়ার অপশন পাবেন। এরপর আপনার ইমেলে সেশনের কনফার্মেশন এবং জয়েনিং লিঙ্ক পাঠিয়ে দেওয়া হবে।</p>
+        </details>
+      </section>
+    </div>
+  </div>
+
+  <!-- UPDATED: Guarantee box text modified as per request -->
+  <div class="guarantee-box">
+    <h3>
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" viewBox="0 0 24 24" width="28" fill="#2a4f6e"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        আপনার সন্তুষ্টিই আমাদের কাছে সবচেয়ে গুরুত্বপূর্ণ
+    </h3>
+  </div>
+
+  <section class="sweet-ending">
+      <h2>💙 এখনই বুক করুন! ওর আত্মবিশ্বাস ফিরিয়ে দিন!</h2>
+      <p>মাত্র ৩০ মিনিট আর ₹১৯৯ – এই ছোট্ট গাইডেন্সই আপনার সন্তানের স্কুলের ইংরেজি ভাষার রেজাল্ট বদলে দিতে পারে।</p>
+  </section>
+
+</main>
+
+<div class="sticky-footer">
+    <div class="sticky-footer__left">
+        <div class="sticky-footer__price">মাত্র ₹১৯৯ <span class="original-price">₹৪৯৯</span></div>
+        <div class="sticky-footer__deadline" id="dynamic-deadline"></div>
+    </div>
+    <div class="sticky-footer__right">
+        <a href="https://spm.graphy.com/products/Personalized-English-Study-Plan-Session-68807b8b49736c3541f0cde0" class="btn-register">এখনই বুক করুন</a>
+        <span class="sticky-footer__bonus-text">৩০ মিনিটের পার্সোনাল সেশন</span>
+    </div>
+</div>
+
+<footer>
+  Copyright &copy; <script>document.write(new Date().getFullYear())</script> Siva Prasad Mukherjee | All Rights Reserved.
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const deadlineElement = document.getElementById('dynamic-deadline');
+        if (deadlineElement) {
+            const today = new Date();
+            const monthNames = ["জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"];
+            const day = today.getDate().toLocaleString('bn-IN'); 
+            const month = monthNames[today.getMonth()];
+            const year = today.getFullYear().toLocaleString('bn-IN');
+            const deadlineText = `অফার শেষ হচ্ছে আজ: ${day} ${month}`;
+            deadlineElement.textContent = deadlineText;
+        }
+    });
+</script>
+
+</body>
+</html>
