@@ -66,7 +66,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: calc(100vh - 76px); /* Full height minus header height */
+      min-height: calc(100vh - 76px - 74px); /* Full height minus header and footer */
       padding: 20px;
       text-align: center;
     }
@@ -156,7 +156,6 @@
     }
     /* --- END OF UPDATED STYLES --- */
 
-
     #instruction {
       font-size: 1em;
       background-color: #f0f4f8;
@@ -210,6 +209,16 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
+    /* --- NEW FOOTER STYLES --- */
+    footer {
+        background: #dbe8e4;
+        color: #5a748c;
+        text-align: center;
+        padding: 25px 20px;
+        font-size: 14px;
+        border-top: 1px solid var(--border-color);
+    }
+
     @media(max-width: 768px) {
         header { 
             flex-direction: column; 
@@ -218,7 +227,7 @@
             text-align: center;
         }
         .content-wrapper {
-          min-height: calc(100vh - 128px);
+          min-height: calc(100vh - 128px - 74px); /* Adjust for taller mobile header and footer */
         }
     }
   </style>
@@ -251,7 +260,6 @@
         <img src="somak.jpg" alt="UPI QR Code" />
       </div>
 
-      <!-- === UPDATED UPI INPUT SECTION === -->
       <div id="upi-input-container">
         <p>অথবা, পরিমাণ এবং আপনার UPI ID লিখে সরাসরি পেমেন্ট করুন:</p>
         <div class="form-group">
@@ -260,13 +268,18 @@
           <button id="pay-now-btn" class="action-button">Pay Now</button>
         </div>
       </div>
-      <!-- === END OF UPDATED SECTION === -->
 
       <div id="instruction">
         💬 পেমেন্ট সম্পূর্ণ করার পরে, অনুগ্রহ করে আপনার পুরো নাম <strong>7439720985</strong> নম্বরে হোয়াটসঅ্যাপ করুন।
       </div>
     </div>
   </main>
+
+  <!-- === NEW FOOTER SECTION === -->
+  <footer>
+    Copyright &copy; <span id="copyright-year"></span> Somak Mukherjee. All Rights Reserved.
+  </footer>
+  <!-- === END OF FOOTER SECTION === -->
 
   <script>
     function handleDonate() {
@@ -287,7 +300,6 @@
       }, 300);
     }
 
-    // --- UPDATED EVENT LISTENER FOR UPI PAYMENT ---
     document.getElementById('pay-now-btn').addEventListener('click', function() {
       const amountInput = document.getElementById('amount-input');
       const buyerUpiIdInput = document.getElementById('buyer-upi-id-input');
@@ -295,32 +307,27 @@
       const amount = amountInput.value.trim();
       const buyerUpiId = buyerUpiIdInput.value.trim();
 
-      // Validate the amount
       if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
         alert('অনুগ্রহ করে একটি সঠিক পরিমাণ লিখুন (e.g., 100)');
         amountInput.focus();
         return;
       }
       
-      // Validate the buyer's UPI ID
       if (!buyerUpiId || !buyerUpiId.includes('@')) {
         alert('অনুগ্রহ করে আপনার সঠিক UPI ID লিখুন (e.g., yourname@bank)');
         buyerUpiIdInput.focus();
         return;
       }
 
-      // Construct the UPI deep link URL. Note: buyer's UPI ID is not part of the standard link.
       const receiverUpi = 'somak.ribhu@okicici';
       const receiverName = 'Somak Mukherjee';
       const note = 'Payment to Somak Mukherjee';
       
       const upiUrl = `upi://pay?pa=${receiverUpi}&pn=${encodeURIComponent(receiverName)}&tn=${encodeURIComponent(note)}&am=${amount}&cu=INR`;
 
-      // Redirect to trigger the UPI app
       window.location.href = upiUrl;
     });
 
-    // --- GOOGLE TRANSLATE SCRIPT ---
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'bn',
@@ -347,6 +354,9 @@
         document.body.appendChild(script);
       }
     });
+
+    // --- NEW: SET DYNAMIC COPYRIGHT YEAR ---
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
   </script>
 
 </body>
